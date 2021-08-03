@@ -1,25 +1,38 @@
-let number = 266219,
-    output = [],
-    sNumber = number.toString();
 
-for (var i = 0, len = sNumber.length; i < len; i += 1) {
-    output.push(+sNumber.charAt(i));
+
+'use strict';
+
+let lang = prompt("Напишите ru или en", "ru");
+
+if (lang === "ru") {
+    console.log("Понедельник, вторник, среда, четверг, пятница, суббота, воскресенье");
+} else if (lang === "en") {
+    console.log("Monday, Tuesday, Thirsday, Wednesday, Friday, Saturday, Sunday");
+} else {
+    console.log("Что-то пошло не так");
 }
 
-console.log(output);
-
-var total = 1;
-    for (var i = 0, n = output.length; i < n; ++i){
-    total *= output[i];
+switch (lang) {
+    case "ru":
+        console.log("Понедельник, вторник, среда, четверг, пятница, суббота, воскресенье");
+        break;
+    case "en":
+        console.log("Monday, Tuesday, Thirsday, Wednesday, Friday, Saturday, Sunday");
+        break;
+    default:
+        console.log("Что-то пошло не так");
 }
 
-console.log(total);
+let langArray = [];
+langArray['ru'] = ['Понедельник', 'вторник', 'среда', 'четверг', 'пятница', 'суббота', 'воскресенье'];
+langArray['en'] = ['Monday', 'Tuesday', 'Thirsday', 'Wednesday', 'Friday', 'Saturday', 'Sunday'];
+console.log(langArray[lang]);
 
-let all = total ** 3;
+let namePerson = prompt("Введите одно из имён: Артем, Максим или любое другое", "Артем");
 
-console.log(all);
+let message = (namePerson === 'Артем') ? 'директор' : 
+(namePerson === 'Максим') ? 'преподаватель' :
+'студент';
 
-let finish = Number((all).toString().split('').slice(0, 1));
-let finish2 = Number((all).toString().split('').slice(1, 2));
-
-console.log(finish + "" + finish2);
+alert(message);
+console.log(message);
