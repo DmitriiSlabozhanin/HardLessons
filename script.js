@@ -1,8 +1,16 @@
 'use strict';
 
-let days = ["Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "<i>Суббота</i>", "<i>Воскресенье</i>"];
-    
-let toDay = (6 + new Date().getDay()) % 7;
-days[toDay] = `<b>${ days[toDay] }</b>`;
-  
-document.body.insertAdjacentHTML("beforeEnd", days.join("<br>"));
+let letters = document.getElementById("change"),
+back = document.getElementById("background");
+
+letters.addEventListener('click', () => {
+let r = Math.floor(Math.random() * (256)),
+    g = Math.floor(Math.random() * (256)),
+    b = Math.floor(Math.random() * (256));
+    let color = '#' + r.toString(16) + g.toString(16) + b.toString(16);
+        document.body.style.background = color;
+        document.querySelector('p').style.color = color;
+
+    });
+
+
